@@ -14,7 +14,9 @@ int main() {
 	char estado1[3], estado2[3];
 	char cod1[50], cod2[50], nomeCidade1[50], nomeCidade2[50];
 	float  area1, area2, pib1, pib2;
-	int pontos1, pontos2, populacao1, populacao2; 
+	int pontos1, pontos2, populacao1, populacao2;
+	float cdp1, cdp2, cpc1, cpc2; 
+	
 	
 	
 	//CARTA 1
@@ -42,6 +44,10 @@ int main() {
 	printf("Pontos turisticos: \n");
 	scanf("%i", &pontos1);
 	
+	cdp1 = populacao1/area1;
+	cpc1 = (pib1 *1000000000) /populacao1;
+	
+
 	
 	
 	
@@ -74,6 +80,10 @@ printf("---------------------------------------------- \n");
 	printf("Pontos turisticos: \n");
 	scanf("%i", &pontos2);
 	
+	cdp2 = populacao2/area2;
+	cpc2 = (pib2 *1000000000) /populacao2;
+	
+	
 	
 	
 	
@@ -86,12 +96,12 @@ printf("---------------------------------------------- \n");
 	
 	
 	printf("CARTA 1\n");
-	printf("O estado : %s\ncodigo 1: %s\nCidade: %s\nPopulacao: %i\nArea:%.2f km²\nPIB: %.2f bilhoes de reais\nNúmeros de pontos turisticos: %i\n ", estado1, cod1, nomeCidade1, populacao1,area1, pib1, pontos1 );
+	printf("O estado : %s\ncodigo 1: %s\nCidade: %s\nPopulacao: %i\nArea:%.2f km²\nPIB: %.2f bilhoes de reais\nNúmeros de pontos turisticos: %i\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n ", estado1, cod1, nomeCidade1, populacao1,area1, pib1, pontos1, cdp1,cpc1 );
 	
 	printf("---------------------------------------------- \n");
 	
 	printf("CARTA 2\n");
-	printf("O estado: %s\ncodigo: %s\nCidade:  %s\nPopulacao: %i\nArea:%.2f km²\nPIB: %.2f bilhoes de reais\nNumeros de pontos turisticos: %i\n ", estado2, cod2, nomeCidade2, populacao2, area2, pib2, pontos2);
+	printf("O estado: %s\ncodigo: %s\nCidade:  %s\nPopulacao: %i\nArea:%.2f km²\nPIB: %.2f bilhoes de reais\nNumeros de pontos turisticos: %i\nDensidade PopulacionaL: %.2f hab/km²\nPIB per Capita %.2f reais\n ", estado2, cod2, nomeCidade2, populacao2, area2, pib2, pontos2, cdp2, cpc2);
 	
 	
 	
