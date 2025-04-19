@@ -14,7 +14,7 @@ int main() {
 	char estado1[3], estado2[3];
 	char cod1[50], cod2[50], nomeCidade1[50], nomeCidade2[50];
 	float  area1, area2, pib1, pib2;
-	int pontos1, pontos2, escolha;
+	int pontos1, pontos2, escolha1, escolha2, resultado1, resultado2;
 	signed long int populacao1, populacao2;
 	float cdp1, cdp2, cpc1, cpc2; 
 	int p1 = 0, p2 =0;
@@ -95,13 +95,26 @@ printf("---------------------------------------------- \n");
 	
 	//Menu interativo:
 	
-	printf("Escolha um atributo para comparar\n");
+	printf("Escolha dois atributo para comparar\n");
+	printf("PRIMEIRO ATRIBUTO\n");
 	printf("1 - populacao\n");
 	printf("2 - area\n");
 	printf("3 - pib\n");
 	printf("4 - numeros de pontos turisticos\n");
 	printf("5 - densidade demografica\n");
-	scanf("%i", &escolha);
+	scanf("%i", &escolha1);
+	
+	
+	printf("SEGUNDO ATRIBUTO \n");
+	printf("1 - populacao\n");
+	printf("2 - area\n");
+	printf("3 - pib\n");
+	printf("4 - numeros de pontos turisticos\n");
+	printf("5 - densidade demografica\n");
+	scanf("%i", &escolha2);
+	
+	
+	
 
 		
 		
@@ -130,100 +143,58 @@ printf("---------------------------------------------- \n");
 		//USO DE SWITCH CASE COM IF E ELSE PARA COMPARAR ATRIBUTOS
 		// comparando população
 		
-	
-	switch(escolha){
-		case 1:
-		if (populacao1 > populacao2) {
-                printf("Carta 1 vence na vida!\n");
-            } else if (populacao1 < populacao2) {
-                printf("Carta 2 vence na vida!\n");
-            } else {
-                printf("Empate!!!\n");
-            }
-            break;
-	
-	
-	break;
-	
-	
-	//comparando AREA
-	case 2:
-		if(area1>area2){
-			printf("Carta 1 venceu\n");
-		}else if(area2>area1){
-			printf("Carta 2 venceu\n");
+		if (escolha1 == escolha2){
+			printf("Error, tente novamente!!!\n");
 		}else{
-			printf("Empate!!!\n");
-		}
-		break;
-	
-	
-	
-
-	
-	//comparando PIB
-	case 3:
-		if(pib1>pib2){
-			printf("Carta 1 venceu \n");
-		}else if(pib2>pib1){
-			printf("Carta 2 venceu\n");
-		}else {
-			printf("Empate!!!\n");
-		}
-		break;
-	
-	
-	
-
-	
-	
-	
-	case 4:
-		if(pontos1>pontos2) {
-			printf("carta 1 venceu \n");
-		}else if(pontos2>pontos1){
-			printf("carta 2 venceu \n");
-		}else{
-			printf("Empate \n");
-		}
-		break;
-		
-		case 5:
-			if(cdp1>cdp2){
-				printf("carta 1 ganhou\n");
-			} else if (cdp2>cdp1) {
-			printf("carta 2 ganhou \n");
-			}else{
-				printf("Empate \n");
+			switch(escolha1){
+				case 1: resultado1 = populacao1 > populacao2? 1 : 0;
+				break;
+				case 2: resultado1 = area1 > area2 ? 1 : 0;
+				break;
+				case 3: resultado1 = pib1 > pib2? 1: 0;
+				break;
+				case 4: resultado1 = pontos1 > pontos2? 1: 0;
+				break;
+				case 5: resultado1 = cdp1 > cdp2? 1 : 0;
+				break;
+				
+			default:
+				printf("Opcao invalida!!!");
 			}
-			break;
-
+			
+		switch (escolha2){
+			case 1: resultado2 = populacao1 > populacao2? 1 : 0;
+				break;
+				case 2: resultado2 = area1 > area2 ? 1 : 0;
+				break;
+				case 3: resultado2 = pib1 > pib2? 1: 0;
+				break;
+				case 4: resultado2 = pontos1 > pontos2? 1: 0;
+				break;
+				case 5: resultado2 = cdp1 > cdp2? 1 : 0;
+				break;
+				
+			default:
+				printf("Opcao invalida!!!");
+		}
+		
+			
+		
+	}
+	
+	printf("pontos carta1:  %i\n", resultado1);
+	printf("pontos carta2: %i\n", resultado2);
+	if(resultado1 && resultado2){
+		printf("Voce venceu!!!\n");
+	}else if (resultado1 != resultado2){
+		printf("Voce perdeu!!!\n");
+	}else{
+		printf("Empate!!!\n");
+	}
+ 
+		
 	
 	
-	
-	
-	default:
-		printf("Encolha invalida. Tente novamente\n");
-	
-	
-}
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	return 0;
-}
-
 	
 	
 	return 0;
