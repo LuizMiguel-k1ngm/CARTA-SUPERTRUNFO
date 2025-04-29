@@ -18,7 +18,7 @@ int main() {
 	signed long int populacao1, populacao2;
 	float cdp1, cdp2, cpc1, cpc2; 
 	int p1 = 0, p2 =0;
-	float superPoder;
+	
 	
 	
 	
